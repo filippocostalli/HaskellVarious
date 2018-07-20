@@ -18,7 +18,7 @@ sumByKey = map ((\(k, v) -> (head k, sum v)) . unzip) . groupBy (\x y -> fst x =
 
 Let's go ahead, step by step. We're gonna use the list above.
 
-sort returns [("Banana",11),("Banana",81),("Lemon",22),("Lemon",37),("Lemon",54),("Orange",8),("Orange",45),("Orange",45)]
+**sort** applied to the list returns [("Banana",11),("Banana",81),("Lemon",22),("Lemon",37),("Lemon",54),("Orange",8),("Orange",45),("Orange",45)]
 
 
 
