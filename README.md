@@ -21,13 +21,13 @@ Let's go ahead, step by step. We're gonna use the list above.
 **sort** applied to the list returns <br />
 > [("Banana",11),("Banana",81),("Lemon",22),("Lemon",37),("Lemon",54),("Orange",8),("Orange",45),("Orange",45)]
 
-The we apply **groupBy (\x y -> fst x == fst y)** that returns us
+Then we apply **groupBy (\x y -> fst x == fst y)** that returns us
 > [[("Banana",11),("Banana",81)],[("Lemon",22),("Lemon",37),("Lemon",54)],[("Orange",8),("Orange",45),("Orange",45)]]
 
 **map unzip** applied to the previous returns the following 
 > [(["Banana","Banana"],[11,81]),(["Lemon","Lemon","Lemon"],[22,37,54]),(["Orange","Orange","Orange"],[8,45,45])]
 
-It's time to apply a lambda that take the head of first and sum seconds
+It's time to apply a lambda that takes the head of first and sum seconds
 **map (\(k, v) -> (head k, sum v))**
 <br/>Here we go!
 > [("Banana",92),("Lemon",113),("Orange",98)]
