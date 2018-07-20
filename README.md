@@ -12,3 +12,13 @@ if not, that couple must be part of the final list too.
 Haskell, as usual, allowed me the way to write a clear, concise and elegant function to solve the problem.
 this is a quite commons problem. So i decide to share my solution with a little explanation.
 
+Composing function is obviously the right way, in fp.
+
+sumByKey = map ((\(k, v) -> (head k, sum v)) . unzip) . groupBy (\x y -> fst x == fst y) . sort    
+
+Let's go ahead, step by step. We're gonna use the list above.
+
+sort returns [("Banana",11),("Banana",81),("Lemon",22),("Lemon",37),("Lemon",54),("Orange",8),("Orange",45),("Orange",45)]
+
+
+
