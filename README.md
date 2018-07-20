@@ -29,7 +29,7 @@ The we apply **groupBy (\x y -> fst x == fst y)** that returns us
 
 It's time to apply a lambda that take the head of first and sum seconds
 **map (\(k, v) -> (head k, sum v))**
-Here we go!
+<br/>Here we go!
 > [("Banana",92),("Lemon",113),("Orange",98)]
 
 
