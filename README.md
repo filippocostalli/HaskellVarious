@@ -21,7 +21,7 @@ Let's go ahead, step by step. We're gonna use the list above.
 **sort** applied to the list returns 
 [("Banana",11),("Banana",81),("Lemon",22),("Lemon",37),("Lemon",54),("Orange",8),("Orange",45),("Orange",45)]
 
-The we apply ** groupBy (\x y -> fst x == fst y) ** that returns
+The we apply **groupBy (\x y -> fst x == fst y)** that returns us
 [[("Banana",11),("Banana",81)],[("Lemon",22),("Lemon",37),("Lemon",54)],[("Orange",8),("Orange",45),("Orange",45)]]
 
 **map unzip** applied to the previous returns the following
