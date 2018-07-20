@@ -14,23 +14,23 @@ this is a quite commons problem. So i decide to share my solution with a little 
 
 Composing function is obviously the right way, in fp.
 
-sumByKey = map ((\(k, v) -> (head k, sum v)) . unzip) . groupBy (\x y -> fst x == fst y) . sort    
+> sumByKey = map ((\(k, v) -> (head k, sum v)) . unzip) . groupBy (\x y -> fst x == fst y) . sort    
 
 Let's go ahead, step by step. We're gonna use the list above.
 
 **sort** applied to the list returns <br />
-[("Banana",11),("Banana",81),("Lemon",22),("Lemon",37),("Lemon",54),("Orange",8),("Orange",45),("Orange",45)]
+> [("Banana",11),("Banana",81),("Lemon",22),("Lemon",37),("Lemon",54),("Orange",8),("Orange",45),("Orange",45)]
 
-The we apply **groupBy (\x y -> fst x == fst y)** that returns us <br />
-[[("Banana",11),("Banana",81)],[("Lemon",22),("Lemon",37),("Lemon",54)],[("Orange",8),("Orange",45),("Orange",45)]]
+The we apply **groupBy (\x y -> fst x == fst y)** that returns us
+> [[("Banana",11),("Banana",81)],[("Lemon",22),("Lemon",37),("Lemon",54)],[("Orange",8),("Orange",45),("Orange",45)]]
 
-**map unzip** applied to the previous returns the following <br />
-[(["Banana","Banana"],[11,81]),(["Lemon","Lemon","Lemon"],[22,37,54]),(["Orange","Orange","Orange"],[8,45,45])]
+**map unzip** applied to the previous returns the following 
+> [(["Banana","Banana"],[11,81]),(["Lemon","Lemon","Lemon"],[22,37,54]),(["Orange","Orange","Orange"],[8,45,45])]
 
 It's time to apply a lambda that take the head of first and sum seconds
 **map (\(k, v) -> (head k, sum v))**
-Here we go!<br />
-[("Banana",92),("Lemon",113),("Orange",98)]
+Here we go!
+> [("Banana",92),("Lemon",113),("Orange",98)]
 
 
 
